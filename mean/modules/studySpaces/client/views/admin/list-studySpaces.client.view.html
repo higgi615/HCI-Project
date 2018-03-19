@@ -1,0 +1,21 @@
+﻿<section>
+  <div class="page-header">
+    <h1>
+      StudySpaces
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.studySpaces.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="studySpace in vm.studySpaces" data-ui-sref="admin.studySpaces.edit({studySpaceId: studySpace._id})" class="list-group-item">
+      <h4 class="list-group-item-heading" data-ng-bind="studySpace.name"></h4>
+      <h4 class="list-group-item-heading" data-ng-bind="studySpace.crowdLevel"></h4>
+      <h4 class="list-group-item-heading" data-ng-bind="studySpace.noiseLevel"></h4>
+      <h4 class="list-group-item-heading" data-ng-bind="studySpace.atmosphere"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.studySpaces.$resolved && !vm.studySpaces.length">
+    No studySpaces yet, why don't you <a data-ui-sref="admin.studySpaces.create">create one</a>?
+  </div>
+</section>

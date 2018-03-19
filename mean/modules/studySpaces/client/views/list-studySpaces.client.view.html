@@ -1,0 +1,18 @@
+<section>
+  <div class="page-header">
+    <h1>StudySpaces</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="studySpace in vm.studySpaces" ui-sref="studySpaces.view({ studySpaceId: studySpace._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="studySpace.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="studySpace.user" ng-bind="studySpace.user.displayName"></span>
+        <span ng-if="!studySpace.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="studySpace.title"></h4>
+      <p class="list-group-item-text" ng-bind="studySpace.content"></p>
+    </a>
+  </div>
+</section>
