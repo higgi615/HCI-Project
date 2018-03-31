@@ -14,6 +14,12 @@
 	<!-- Bootstrap core CSS -->
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
 	<!-- Custom styles for this template -->
 	<link href="http://getbootstrap.com/docs/4.0/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -67,8 +73,22 @@
 	text-align: right;
 }
 
+#options{
+
+}
+
 body {
 	padding-bottom: 70px;
+}
+
+#footer {
+    position: fixed;
+    height: 50px;
+
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
 }
 
 .post{
@@ -83,13 +103,64 @@ body {
 	color: black;
 }
 
+.panel{
+	background-color: white;
+}
+
+.page-header{
+	max-height: 30px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+ul.nav {
+
+    width:100%;
+    margin:0 auto;
+    padding:0;
+    list-style:none;
+    /* background-color:#62564A; */
+    text-align:center;
+    font-family: sans-serif;
+}
+.nav li {
+    display:inline-block;
+    width:33%;
+    margin:0;
+    padding:0;
+}
+/* .nav a {
+    text-align:center;
+    /* padding:12px 0 13px 0;
+    margin:0;
+    /* border-left: 1px solid #fff;
+    /* border-right: 1px solid #fff;
+    display:block;
+} */
+.nav a:hover {
+    background:#A26A42;
+    border:none;
+}
+
+ul.nav li:first-child a{
+    border:none;
+}
+ul.nav li:last-child a {
+    border:none;
+}
+
+
+
 </style>
 
 <body>
 	<section>
+
+		<!-- Add a background image to this section of century tower or something -->
 		<div id = "logo" class="page-header">
 			<span class = "align-middle">
-				<h1 class = "text-center" style = "font-family: 'Sanchez', serif;">StudySpaces</h1>
+				<h1 class = "text-center" style = "font-family: 'Sanchez', serif;">
+					<span style="font-weight:bold">Study Spaces</span>
+				</h1>
 			</span>
 		</div>
 	</section>
@@ -98,37 +169,50 @@ body {
 		<div id = "studyLocation" class = "text-center">
 			<span class = "align-middle">
 				<h4 class = "text-center">
-					Marston
+					<span style="font-weight:bold">Marston</span>
 				</h4>
 
-				<!-- <div id = "approvalButton" >
-					<a href="#" class="btn btn-info btn-md">
-						<span class="glyphicon glyphicon-thumbs-up"></span> Like
-					</a>
-				</div> -->
-
-				<div class="panel panel-default">
+				<div class="panel panel-primary" >
 
 					<div id = "attributes" class="panel-body">
 
+						<div class = text-center>
+							<button type="button" class="btn btn-primary btn-lg" style = "width: 100%;">
+  								<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Accurate
+							</button>
+						</div>
 
-						<div class="col-sm-8" id = "setBlockWidth">
-							<button type="button" class="btn btn-primary btn-block">
-								Crowdedness
-							</button>
-						</div>
 						<br>
-						<div class="col-sm-8" id = "setBlockWidth">
-							<button type="button" class="btn btn-primary btn-block">
-								Noise Level
-							</button>
+
+						<div class = row>
+							<div class="col-sm-8" id = "setBlockWidth">
+								<button type="button" class="btn btn-primary btn-block">
+									Crowdedness
+								</button>
+							</div>
+
 						</div>
+
 						<br>
-						<div class="col-sm-8" id = "setBlockWidth">
-							<button type="button" class="btn btn-primary btn-block">
-								Atmosphere
-							</button>
+
+						<div class = row>
+							<div class="col-sm-8" id = "setBlockWidth">
+								<button type="button" class="btn btn-primary btn-block">
+									Noise Level
+								</button>
+							</div>
 						</div>
+
+						<br>
+
+						<div class = row>
+							<div class="col-sm-8" id = "setBlockWidth">
+								<button type="button" class="btn btn-primary btn-block">
+									Atmosphere
+								</button>
+							</div>
+						</div>
+
 					</div>
 				</div>
 
@@ -141,40 +225,129 @@ body {
 			<span class = "align-middle">
 
 				<h4 class = "text-center">
-					Library West
+					<span style="font-weight:bold">Library West</span>
 				</h4>
 
-					<div class="panel panel-default">
+					<div class="panel panel-primary">
 	  					<div id = "attributes" class="panel-body">
-							<div class="col-sm-8" id = "setBlockWidth">
-								<button type="button" class="btn btn-primary btn-block">
-									Crowdedness
+
+							<div class = text-center>
+								<button type="button" class="btn btn-primary btn-lg" style = "width: 100%;">
+									<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Accurate
 								</button>
 							</div>
+
 							<br>
-							<div class="col-sm-8" id = "setBlockWidth">
-								<button type="button" class="btn btn-primary btn-block">
-									Noise Level
-								</button>
+
+							<div class = row>
+								<div class="col-sm-8" id = "setBlockWidth">
+									<button type="button" class="btn btn-primary btn-block">
+										Crowdedness
+									</button>
+								</div>
 							</div>
+
+
 							<br>
-							<div class="col-sm-8" id = "setBlockWidth">
-								<button type="button" class="btn btn-primary btn-block">
-									Atmosphere
-								</button>
+
+							<div class = row>
+								<div class="col-sm-8" id = "setBlockWidth">
+									<button type="button" class="btn btn-primary btn-block">
+										Noise Level
+									</button>
+								</div>
+
 							</div>
+
+							<br>
+
+							<div class = row>
+								<div class="col-sm-8" id = "setBlockWidth">
+									<button type="button" class="btn btn-primary btn-block">
+										Atmosphere
+									</button>
+								</div>
+
+							</div>
+
 						</div>
 					</div>
 			</span>
 		</div>
 	</div>
 
+	<div class = "post" style = "background-color: orange;">
+		<div id = "studyLocation" class = "text-center">
+			<span class = "align-middle">
+
+				<!-- Things to consider:
+					Line Height
+
+				-->
+
+				<h4 class = "text-center">
+					<span style="font-weight:bold">Some other place</span>
+				</h4>
+
+				<div class="panel panel-primary" >
+
+					<div id = "attributes" class="panel-body">
+
+						<div class = text-center>
+							<button type="button" class="btn btn-primary btn-lg" style = "width: 100%;">
+								<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Accurate
+							</button>
+						</div>
+
+						<br>
+
+						<div class = row>
+							<div class="col-sm-8" id = "setBlockWidth">
+								<button type="button" class="btn btn-primary btn-block">
+									Crowdedness
+								</button>
+							</div>
+
+						</div>
+
+						<br>
+
+						<div class = row>
+							<div class="col-sm-8" id = "setBlockWidth">
+								<button type="button" class="btn btn-primary btn-block">
+									Noise Level
+								</button>
+							</div>
+						</div>
+
+						<br>
+
+						<div class = row>
+							<div class="col-sm-8" id = "setBlockWidth">
+								<button type="button" class="btn btn-primary btn-block">
+									Atmosphere
+								</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</span>
+		</div>
+	</div>
 
 
-	<footer class="footer" style = "background-color = blue;">
-		<!-- <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light" id = "navbar-font"> -->
+
+	<footer class="footer">
 		<div class="container" >
-			<span id = "footerText" class="col-md-4">
+			<ul class="nav" id = "footerText">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Something</a></li>
+				<li><a href="#">Something</a></li>
+			</ul>
+
+			<!-- <span id = "footerText" class="col-md-4">
 				<button type="button" class="btn btn-dark btn-sm" style = "width: 25%">
 					Home
 				</button>
@@ -188,9 +361,9 @@ body {
 				<button type="button" class="btn btn-dark btn-sm" style = "width: 25%">
 					Something
 				</button>
-			</span>
+			</span> -->
 
 		</div>
-		<!-- </nav> -->
+
 	</footer>
 </body>
