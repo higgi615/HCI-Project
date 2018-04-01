@@ -34,7 +34,7 @@ exports.read = function (req, res) {
 
   var lastUpdated = studySpace.updated_at;
   var timeSinceUpdateInMs = Date.now() - lastUpdated.getTime();
-  var timeSinceUpdateInMin = timeSinceUpdateInMs/(1000 * 60);
+  var timeSinceUpdateInMin = timeSinceUpdateInMs / (1000 * 60);
 
   console.log(timeSinceUpdateInMin);
 
@@ -58,7 +58,7 @@ exports.update = function (req, res) {
 
   var lastUpdated = studySpace.updated_at;
   var timeSinceUpdateInMs = Date.now() - lastUpdated.getTime();
-  var timeSinceUpdateInMin = timeSinceUpdateInMs/(1000 * 60);
+  var timeSinceUpdateInMin = timeSinceUpdateInMs / (1000 * 60);
 
   console.log(timeSinceUpdateInMin);
 
@@ -138,6 +138,20 @@ exports.list = function (req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
+      for (var i in studySpaces) {
+
+        var lastUpdated = studySpaces[i].updated_at;
+        var timeSinceUpdateInMs = Date.now() - lastUpdated.getTime();
+        var timeSinceUpdateInMin = timeSinceUpdateInMs / (1000 * 60);
+
+        console.log(timeSinceUpdateInMin);
+
+        if (timeSinceUpdateInMin >= 120) {
+          studySpaces[i].crowdLevel = 1;
+          studySpaces[i].noiseLevel = 1;
+          studySpaces[i].atmosphere = 1;
+        }
+      }
       res.json(studySpaces);
     }
   });
