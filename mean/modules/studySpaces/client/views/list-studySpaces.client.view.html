@@ -99,7 +99,7 @@ body {
 	text-align: center;
 	font-family: 'Sanchez', serif;
 	padding-top: 10px;
-	padding-bottom: 210px;
+	padding-bottom: 185px;
 	color: black;
 }
 
@@ -127,6 +127,16 @@ ul.nav {
 	width:33%;
 	margin:0;
 	padding:0;
+}
+
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
 }
 /* .nav a {
 text-align:center;
@@ -182,15 +192,6 @@ ul.nav li:last-child a {
 							</button>
 						</div>
 
-						<br>
-
-						<div class = row>
-							<div class="col-sm-8" id = "setBlockWidth">
-								<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#marstonCrowd">
-									Crowdedness
-								</button>
-							</div>
-						</div>
 
 						<div id="marstonCrowd" class="modal fade" role="dialog">
 							<div class="modal-dialog">
@@ -219,24 +220,23 @@ ul.nav li:last-child a {
 
 						<br>
 
-						<div class = row>
-							<div class="col-sm-8" id = "setBlockWidth">
-								<button type="button" class="btn btn-primary btn-block">
+						<div id="outer">
+							<div class="inner">
+								<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#marstonCrowd" style = "max-width: 375px;">
+									Crowdedness
+								</button>
+							</div>
+							<div class="inner">
+								<button class="btn btn-primary btn-block">
 									Noise Level
 								</button>
 							</div>
-						</div>
-
-						<br>
-
-						<div class = row>
-							<div class="col-sm-8" id = "setBlockWidth">
-								<button type="button" class="btn btn-primary btn-block">
-									Atmosphere
+							<div class="inner">
+								<button class="btn btn-primary btn-block">
+								Atmosphere
 								</button>
 							</div>
 						</div>
-
 					</div>
 				</div>
 
@@ -263,36 +263,24 @@ ul.nav li:last-child a {
 
 						<br>
 
-						<div class = row>
-							<div class="col-sm-8" id = "setBlockWidth">
-								<button type="button" class="btn btn-primary btn-block">
+						<div id="outer">
+							<div class="inner">
+								<button class="btn btn-primary btn-block" >
 									Crowdedness
 								</button>
 							</div>
-						</div>
-
-
-						<br>
-
-						<div class = row>
-							<div class="col-sm-8" id = "setBlockWidth">
-								<button type="button" class="btn btn-primary btn-block">
+							<div class="inner">
+								<button class="btn btn-primary btn-block">
 									Noise Level
 								</button>
 							</div>
-
-						</div>
-
-						<br>
-
-						<div class = row>
-							<div class="col-sm-8" id = "setBlockWidth">
-								<button type="button" class="btn btn-primary btn-block">
-									Atmosphere
+							<div class="inner">
+								<button class="btn btn-primary btn-block">
+								Atmosphere
 								</button>
 							</div>
-
 						</div>
+
 
 					</div>
 				</div>
@@ -325,31 +313,20 @@ ul.nav li:last-child a {
 
 					<br>
 
-					<div class = row>
-						<div class="col-sm-8" id = "setBlockWidth">
-							<button type="button" class="btn btn-primary btn-block">
+					<div id="outer">
+						<div class="inner">
+							<button class="btn btn-primary btn-block" >
 								Crowdedness
 							</button>
 						</div>
-
-					</div>
-
-					<br>
-
-					<div class = row>
-						<div class="col-sm-8" id = "setBlockWidth">
-							<button type="button" class="btn btn-primary btn-block">
+						<div class="inner">
+							<button class="btn btn-primary btn-block">
 								Noise Level
 							</button>
 						</div>
-					</div>
-
-					<br>
-
-					<div class = row>
-						<div class="col-sm-8" id = "setBlockWidth">
-							<button type="button" class="btn btn-primary btn-block">
-								Atmosphere
+						<div class="inner">
+							<button class="btn btn-primary btn-block">
+							Atmosphere
 							</button>
 						</div>
 					</div>
