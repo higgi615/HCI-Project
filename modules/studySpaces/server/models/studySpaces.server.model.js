@@ -23,6 +23,10 @@ var StudySpaceSchema = new Schema({
     trim: true,
     required: 'StudySpace must have a name'
   },
+  category: {
+    type: String,
+    default: 'other'
+  },
   crowdLevel: {
     type: Number,
     default: 1

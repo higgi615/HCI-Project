@@ -110,15 +110,22 @@ ul.nav li:last-child a {
 <section style="padding:-15px">
 
 	<!-- Add a background image to this section of century tower or something -->
-	<div id = "logo">
-		<span class = "align-middle">
-			<h1 class = "text-center">
-				<span style="font-weight:bold">Study Spaces</span>
-			</h1>
-		</span>
+	<div id = "logo" style="padding-top:10px;margin-bottom:30px;font-size:20px">
+		<div class="col-lg-4 col-xs-4" ng-click="category='Marston'" style="padding:0">
+			<div ng-if="category==='Marston'" style="font-weight:bold;border-bottom:3px solid black">Marston</div>
+			<div ng-hide="category==='Marston'" style="border-bottom:3px solid lightgrey">Marston</div>
+		</div>
+		<div class="col-lg-4 col-xs-4" ng-click="category='Lib West'" style="padding:0">
+			<div ng-if="category==='Lib West'" style="font-weight:bold;border-bottom:3px solid black">Lib West</div>
+			<div ng-hide="category==='Lib West'" style="border-bottom:3px solid lightgrey">Lib West</div>
+		</div>
+		<div class="col-lg-4 col-xs-4" ng-click="category='Other'" style="padding:0">
+			<div ng-if="category==='Other'" style="font-weight:bold;border-bottom:3px solid black">Other</div>
+			<div ng-hide="category==='Other'" style="border-bottom:3px solid lightgrey">Other</div>
+		</div>
 	</div>
 
-	<div data-ng-repeat="studySpace in vm.studySpaces | orderBy: 'name'" class="col-lg-4 col-xs-12" style="height:200px;padding-bottom:30px;border-bottom:3px solid grey">
+	<div data-ng-repeat="studySpace in vm.studySpaces | orderBy: 'name' | filter: category" class="col-lg-4 col-xs-12" style="height:200px;padding-bottom:30px;border-bottom:3px solid grey">
 		<div class = "text-center" style="border-bottom:1px solid lightgrey;margin-bottom:10px;height:16%">
 			<h4>
 				<span style="font-weight:bold">{{studySpace.name}}</span>

@@ -12,6 +12,8 @@
 
     vm.studySpaces = StudySpacesService.query();
 
+    $scope.category = 'Marston';
+
     $scope.getCrowdIcon = function (crowdLevel) {
       if (crowdLevel < 1.5) {
         return '/modules/studySpaces/client/img/crowd0.png';
