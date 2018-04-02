@@ -98,6 +98,11 @@ ul.nav li:last-child a {
 	border:none;
 }
 
+.modal-dialog {
+	-webkit-transform: translate(0, 0) !important;
+	transform: translate(0, 0) !important
+}
+
 
 
 </style>
@@ -113,96 +118,96 @@ ul.nav li:last-child a {
 		</span>
 	</div>
 
-	<div data-ng-repeat="studySpace in vm.studySpaces | orderBy: 'name'" class="col-lg-4 col-xs-12" style="height:150px;padding-bottom:30px;border-bottom:3px solid grey">
-		<div class = "text-center" style="border-bottom:1px solid lightgrey;margin-bottom:10px;height:20%">
+	<div data-ng-repeat="studySpace in vm.studySpaces | orderBy: 'name'" class="col-lg-4 col-xs-12" style="height:200px;padding-bottom:30px;border-bottom:3px solid grey">
+		<div class = "text-center" style="border-bottom:1px solid lightgrey;margin-bottom:10px;height:16%">
 			<h4>
 				<span style="font-weight:bold">{{studySpace.name}}</span>
 			</h4>
 		</div>
-		<div style="border-bottom:1px solid lightgrey;height:50%">
+		<div style="border-bottom:1px solid lightgrey;height:62%">
 			<div class="col-lg-4 col-xs-4" style="border-right:1px solid lightgrey" data-toggle="modal" data-target="#crowdModal">
 				<img src={{getCrowdIcon(studySpace.crowdLevel)}} width=100% height=100% align="middle"></img>
 			</div>
 
 			<!-- Crowd Modal -->
 			<div class="modal fade" id="crowdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-dialog" role="document">
 					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Crowdedness</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
+						<div class="modal-header" style="height:70px">
+							<h5 class="modal-title" id="exampleModalLabel" style="text-align:center;width:100%">Crowdedness</h5>
+							<div style="text-align:center;width:100%;position:absolute;padding-top:20px;left:0"> How crowded is it?</div>
 						</div>
-						<div class="modal-body">
-							How crowded is it?
+						<div class="modal-body" style="height:300px">
+							<div style="height:50%;width:50%;position:absolute;margin-left:5%"><img src="/modules/studySpaces/client/img/crowd0.png" width=70% align="middle" ng-click="studySpace.crowdLevel=1;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;margin-left:5%"><img src="/modules/studySpaces/client/img/crowd1.png" width=70% align="middle" ng-click="studySpace.crowdLevel=2;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/crowd2.png" width=70% align="middle" ng-click="studySpace.crowdLevel=3;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/crowd3.png" width=70% align="middle" ng-click="studySpace.crowdLevel=4;save(studySpace)" data-dismiss="modal"></img></div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Submit</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-lg-4 col-xs-4" style="border-right:1px solid lightgrey" data-toggle="modal" data-target="#noiseModal">
-				Noise: {{studySpace.noiseLevel}}
+				<img src={{getNoiseIcon(studySpace.noiseLevel)}} width=100% height=100% align="middle"></img>
 			</div>
 
 			<!-- Crowd Modal -->
 			<div class="modal fade" id="noiseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content ">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Noise Level</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
+						<div class="modal-header" style="height:70px">
+							<h5 class="modal-title" id="exampleModalLabel" style="text-align:center;width:100%">Noise Level</h5>
+							<div style="text-align:center;width:100%;position:absolute;padding-top:20px;left:0px"> How loud is it?</div>
 						</div>
-						<div class="modal-body">
-							How loud is it?
+						<div class="modal-body" style="height:300px">
+							<div style="height:50%;width:50%;position:absolute;margin-left:5%"><img src="/modules/studySpaces/client/img/sound0.png" width=70% align="middle" ng-click="studySpace.noiseLevel=1;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;margin-left:5%"><img src="/modules/studySpaces/client/img/sound1.png" width=70% align="middle" ng-click="studySpace.noiseLevel=2;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/sound2.png" width=70% align="middle" ng-click="studySpace.noiseLevel=3;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/sound3.png" width=70% align="middle" ng-click="studySpace.noiseLevel=4;save(studySpace)" data-dismiss="modal"></img></div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Submit</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-lg-4 col-xs-4" data-toggle="modal" data-target="#atmoModal">
-				Atmosphere: {{studySpace.atmosphere}}
+				<img src={{getAtmoIcon(studySpace.atmosphere)}} width=100% height=100% align="middle"></img>
 			</div>
 
 			<!-- Crowd Modal -->
 			<div class="modal fade" id="atmoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Atmosphere</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
+						<div class="modal-header" style="height:70px">
+							<h5 class="modal-title" id="exampleModalLabel" style="text-align:center;width:100%">Atmosphere</h5>
+							<div style="text-align:center;width:100%;position:absolute;padding-top:20px;left:0px">What is the mood like?</div>
 						</div>
-						<div class="modal-body">
-							What is the atmosphere like?
+						<div class="modal-body" style="height:300px">
+							<div style="height:50%;width:50%;position:absolute;margin-left:5%"><img src="/modules/studySpaces/client/img/atmo0.png" width=70% align="middle" ng-click="studySpace.atmosphere=1;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;margin-left:5%"><img src="/modules/studySpaces/client/img/atmo1.png" width=70% align="middle" ng-click="studySpace.atmosphere=2;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/atmo2.png" width=70% align="middle" ng-click="studySpace.atmosphere=3;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/atmo3.png" width=70% align="middle" ng-click="studySpace.atmosphere=4;save(studySpace)" data-dismiss="modal"></img></div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Submit</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div style="margin-top:5px">
+			<button type="button" class="btn btn-primary" style = "width: 100%;" ng-click="save(studySpace)">
+				<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Accurate
+			</button>
+		</div>
 	</div>
 
 </div>
-<!-- <div style="margin-top:5px">
-	<button type="button" class="btn btn-primary" style = "width: 100%;" >
-		<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Accurate
-	</button>
-</div> -->
 
 
 

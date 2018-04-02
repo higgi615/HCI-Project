@@ -56,5 +56,19 @@
         return '/modules/studySpaces/client/img/atmo3.png';
       }
     };
+
+    // Save StudySpace
+    $scope.save = function (studySpace) {
+      // Create a new studySpace, or update the current instance
+      studySpace.createOrUpdate()
+        .then(successCallback)
+        .catch(errorCallback);
+
+      function successCallback(res) {
+      }
+
+      function errorCallback(res) {
+      }
+    }
   }
 }());
