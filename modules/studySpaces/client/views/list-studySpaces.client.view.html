@@ -132,7 +132,7 @@ ul.nav li:last-child a {
 			</h4>
 		</div>
 		<div style="border-bottom:1px solid lightgrey;height:62%">
-			<div class="col-lg-4 col-xs-4" style="border-right:1px solid lightgrey" data-toggle="modal" data-target="#crowdModal">
+			<div class="col-lg-4 col-xs-4" style="border-right:1px solid lightgrey" ng-click="setCurr(studySpace.name)" data-toggle="modal" data-target="#crowdModal">
 				<img src={{getCrowdIcon(studySpace.crowdLevel)}} width=100% height=100% align="middle"></img>
 			</div>
 
@@ -145,10 +145,10 @@ ul.nav li:last-child a {
 							<div style="text-align:center;width:100%;position:absolute;padding-top:20px;left:0"> How crowded is it?</div>
 						</div>
 						<div class="modal-body" style="height:300px">
-							<div style="height:50%;width:50%;position:absolute;margin-left:5%"><img src="/modules/studySpaces/client/img/crowd0.png" width=70% align="middle" ng-click="studySpace.crowdLevel=1;save(studySpace)" data-dismiss="modal"></img></div>
-							<div style="height:50%;width:50%;position:absolute;left:50%;margin-left:5%"><img src="/modules/studySpaces/client/img/crowd1.png" width=70% align="middle" ng-click="studySpace.crowdLevel=2;save(studySpace)" data-dismiss="modal"></img></div>
-							<div style="height:50%;width:50%;position:absolute;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/crowd2.png" width=70% align="middle" ng-click="studySpace.crowdLevel=3;save(studySpace)" data-dismiss="modal"></img></div>
-							<div style="height:50%;width:50%;position:absolute;left:50%;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/crowd3.png" width=70% align="middle" ng-click="studySpace.crowdLevel=4;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;margin-left:5%"><img src="/modules/studySpaces/client/img/crowd0.png" width=70% align="middle" ng-click="save(current, 1, 1)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;margin-left:5%"><img src="/modules/studySpaces/client/img/crowd1.png" width=70% align="middle" ng-click="save(current, 2, 1)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/crowd2.png" width=70% align="middle" ng-click="save(current, 3, 1)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/crowd3.png" width=70% align="middle" ng-click="save(current, 4, 1)" data-dismiss="modal"></img></div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -157,7 +157,7 @@ ul.nav li:last-child a {
 				</div>
 			</div>
 
-			<div class="col-lg-4 col-xs-4" style="border-right:1px solid lightgrey" data-toggle="modal" data-target="#noiseModal">
+			<div class="col-lg-4 col-xs-4" style="border-right:1px solid lightgrey"  ng-click="setCurr(studySpace.name)" data-toggle="modal" data-target="#noiseModal">
 				<img src={{getNoiseIcon(studySpace.noiseLevel)}} width=100% height=100% align="middle"></img>
 			</div>
 
@@ -170,10 +170,10 @@ ul.nav li:last-child a {
 							<div style="text-align:center;width:100%;position:absolute;padding-top:20px;left:0px"> How loud is it?</div>
 						</div>
 						<div class="modal-body" style="height:300px">
-							<div style="height:50%;width:50%;position:absolute;margin-left:5%"><img src="/modules/studySpaces/client/img/sound0.png" width=70% align="middle" ng-click="studySpace.noiseLevel=1;save(studySpace)" data-dismiss="modal"></img></div>
-							<div style="height:50%;width:50%;position:absolute;left:50%;margin-left:5%"><img src="/modules/studySpaces/client/img/sound1.png" width=70% align="middle" ng-click="studySpace.noiseLevel=2;save(studySpace)" data-dismiss="modal"></img></div>
-							<div style="height:50%;width:50%;position:absolute;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/sound2.png" width=70% align="middle" ng-click="studySpace.noiseLevel=3;save(studySpace)" data-dismiss="modal"></img></div>
-							<div style="height:50%;width:50%;position:absolute;left:50%;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/sound3.png" width=70% align="middle" ng-click="studySpace.noiseLevel=4;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;margin-left:5%"><img src="/modules/studySpaces/client/img/sound0.png" width=70% align="middle" ng-click="save(current, 1, 2)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;margin-left:5%"><img src="/modules/studySpaces/client/img/sound1.png" width=70% align="middle" ng-click="save(current, 2, 2)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/sound2.png" width=70% align="middle" ng-click="save(current, 3, 2)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/sound3.png" width=70% align="middle" ng-click="save(current, 4, 2)" data-dismiss="modal"></img></div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -182,7 +182,7 @@ ul.nav li:last-child a {
 				</div>
 			</div>
 
-			<div class="col-lg-4 col-xs-4" data-toggle="modal" data-target="#atmoModal">
+			<div class="col-lg-4 col-xs-4" ng-click="setCurr(studySpace.name)" data-toggle="modal" data-target="#atmoModal">
 				<img src={{getAtmoIcon(studySpace.atmosphere)}} width=100% height=100% align="middle"></img>
 			</div>
 
@@ -195,10 +195,10 @@ ul.nav li:last-child a {
 							<div style="text-align:center;width:100%;position:absolute;padding-top:20px;left:0px">What is the mood like?</div>
 						</div>
 						<div class="modal-body" style="height:300px">
-							<div style="height:50%;width:50%;position:absolute;margin-left:5%"><img src="/modules/studySpaces/client/img/atmo0.png" width=70% align="middle" ng-click="studySpace.atmosphere=1;save(studySpace)" data-dismiss="modal"></img></div>
-							<div style="height:50%;width:50%;position:absolute;left:50%;margin-left:5%"><img src="/modules/studySpaces/client/img/atmo1.png" width=70% align="middle" ng-click="studySpace.atmosphere=2;save(studySpace)" data-dismiss="modal"></img></div>
-							<div style="height:50%;width:50%;position:absolute;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/atmo2.png" width=70% align="middle" ng-click="studySpace.atmosphere=3;save(studySpace)" data-dismiss="modal"></img></div>
-							<div style="height:50%;width:50%;position:absolute;left:50%;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/atmo3.png" width=70% align="middle" ng-click="studySpace.atmosphere=4;save(studySpace)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;margin-left:5%"><img src="/modules/studySpaces/client/img/atmo0.png" width=70% align="middle" ng-click="save(current, 1, 3)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;margin-left:5%"><img src="/modules/studySpaces/client/img/atmo1.png" width=70% align="middle" ng-click="save(current, 2, 3)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/atmo2.png" width=70% align="middle" ng-click="save(current, 3, 3)" data-dismiss="modal"></img></div>
+							<div style="height:50%;width:50%;position:absolute;left:50%;top:50%;margin-left:5%;margin-top:2%"><img src="/modules/studySpaces/client/img/atmo3.png" width=70% align="middle" ng-click="save(current, 4, 3)" data-dismiss="modal"></img></div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

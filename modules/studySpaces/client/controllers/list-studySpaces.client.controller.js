@@ -13,6 +13,7 @@
     vm.studySpaces = StudySpacesService.query();
 
     $scope.category = 'Marston';
+    $scope.current = '3rd Floor';
 
     $scope.getCrowdIcon = function (crowdLevel) {
       if (crowdLevel < 1.5) {
@@ -60,17 +61,36 @@
     };
 
     // Save StudySpace
-    $scope.save = function (studySpace) {
+    $scope.save = function (name, newLevel, field) {
       // Create a new studySpace, or update the current instance
-      studySpace.createOrUpdate()
-        .then(successCallback)
-        .catch(errorCallback);
+      console.log(name);
+      for (var i in vm.studySpaces) {
+        if (vm.studySpaces[i].name === name) {
+          if (field === 1) {
+            vm.studySpaces[i].crowdLevel = newLevel;
+          }
+          else if (field === 2) {
+            vm.studySpaces[i].noiseLevel = newLevel;
+          }
+          else if (field === 3) {
+            vm.studySpaces[i].atmosphere = newLevel;
+          }
+          vm.studySpaces[i].createOrUpdate()
+            .then(successCallback)
+            .catch(errorCallback);
+        }
+      }
 
       function successCallback(res) {
       }
 
       function errorCallback(res) {
       }
+    }
+
+    $scope.setCurr = function(name) {
+      console.log(name);
+      $scope.current = name;
     }
   }
 }());
