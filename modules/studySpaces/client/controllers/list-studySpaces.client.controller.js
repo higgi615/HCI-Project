@@ -5,9 +5,9 @@
     .module('studySpaces')
     .controller('StudySpacesListController', StudySpacesListController);
 
-  StudySpacesListController.$inject = ['$scope', 'StudySpacesService'];
+  StudySpacesListController.$inject = ['$scope', '$window', 'StudySpacesService'];
 
-  function StudySpacesListController($scope, StudySpacesService) {
+  function StudySpacesListController($scope, $window, StudySpacesService) {
     var vm = this;
 
     vm.studySpaces = StudySpacesService.query();
@@ -87,6 +87,10 @@
       function errorCallback(res) {
       }
     }
+
+    $scope.confirmAccurate = function () {
+      $window.confirm('Updated sucessfully!');
+    };
 
     $scope.setCurr = function(name) {
       console.log(name);
