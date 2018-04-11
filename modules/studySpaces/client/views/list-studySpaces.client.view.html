@@ -137,7 +137,7 @@ ul.nav li:last-child a {
 			</div>
 
 			<!-- Crowd Modal -->
-			<div class="modal fade" id="crowdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal" id="crowdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header" style="height:70px">
@@ -162,7 +162,7 @@ ul.nav li:last-child a {
 			</div>
 
 			<!-- Crowd Modal -->
-			<div class="modal fade" id="noiseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal" id="noiseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content ">
 						<div class="modal-header" style="height:70px">
@@ -187,7 +187,7 @@ ul.nav li:last-child a {
 			</div>
 
 			<!-- Crowd Modal -->
-			<div class="modal fade" id="atmoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal" id="atmoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content">
 						<div class="modal-header" style="height:70px">
@@ -208,7 +208,7 @@ ul.nav li:last-child a {
 			</div>
 		</div>
 		<div style="margin-top:5px">
-			<button type="button" class="btn" style = "width: 100%;background-color:#2b4cc1;color:white" ng-click="save(studySpace); confirmAccurate()">
+			<button type="button" class="btn" style = "width: 100%;background-color:#2b4cc1;color:white" ng-click="save(studySpace.name, studySpace.crowdLevel, 1);save(studySpace.name, studySpace.noiseLevel, 2); save(studySpace.name, studySpace.atmosphere, 3); confirmAccurate()">
 				<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="color:white"></span> Accurate
 			</button>
 		</div>
