@@ -89,7 +89,7 @@
     }
 
     $scope.confirmAccurate = function () {
-      $window.confirm('Updated sucessfully!');
+      $window.alert('Thank you for your input!');
     };
 
     $scope.setCurr = function(name) {
